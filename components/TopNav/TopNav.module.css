@@ -1,0 +1,160 @@
+.nav {
+  height: var(--topnav-h);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 12px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 10;
+}
+
+/* ── Left ──────────────────────────────── */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: var(--accent-light);
+  border-radius: var(--r-md);
+  flex-shrink: 0;
+}
+
+.appName {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* ── Centre ────────────────────────────── */
+.centre {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+}
+
+.roomBadge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+.roomLabel {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.roomName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  padding: 2px;
+  border-radius: 4px;
+  transition: color var(--t-fast), background var(--t-fast);
+}
+
+.iconBtn:hover {
+  color: var(--accent);
+  background: var(--bg-active);
+}
+
+.onlineBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Pulsing green dot */
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--green);
+  opacity: 0.3;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ── Right ─────────────────────────────── */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.shareBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--r-full);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.shareBtn:hover {
+  background: var(--accent);
+  color: #ffffff;
+}

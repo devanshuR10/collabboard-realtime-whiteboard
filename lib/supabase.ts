@@ -1,10 +1,28 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  realtime: {
+    params: {
+      eventsPerSecond: 40,
+    },
+  },
+});
 
-/** True only when both env vars are set */
-export const isSupabaseConfigured =
-  supabaseUrl !== '' && supabaseAnonKey !== '';
+export type DrawEvent = {
+  type: "draw" | "erase" | "clear";
+  userId: string;
+  userName: string;
+  color: string;
+  size: number;
+  points: { x: number; y: number }[];
+};
+
+export type UserPresence = {
+  userId: string;
+  userName: string;
+  color: string;
+  joinedAt: number;
+};

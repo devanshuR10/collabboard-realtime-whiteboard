@@ -1,0 +1,176 @@
+.toolbar {
+  width: var(--toolbar-w);
+  min-width: var(--toolbar-w);
+  height: 100%;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+/* ── Section ─────────────────────────────────────────── */
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 6px;
+}
+
+.divider {
+  width: 56px;
+  height: 1px;
+  background: var(--border);
+  margin: 6px 0;
+  flex-shrink: 0;
+}
+
+/* ── Tool button ─────────────────────────────────────── */
+.toolBtn {
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 7px 6px;
+  border-radius: var(--r-sm);
+  color: var(--tool-icon);
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.toolBtn:hover {
+  background: var(--bg-hover);
+}
+
+.toolActive {
+  background: var(--bg-active) !important;
+  color: var(--accent) !important;
+}
+
+.toolDanger:hover {
+  background: #fef2f2 !important;
+  color: var(--red) !important;
+}
+
+.toolLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ── Color section ───────────────────────────────────── */
+.colorSection {
+  width: 100%;
+  padding: 4px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.colorLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.swatchGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: transform var(--t-fast), border-color var(--t-fast);
+  cursor: pointer;
+}
+
+.swatch:hover {
+  transform: scale(1.15);
+}
+
+.swatchActive {
+  border-color: var(--text-primary);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--text-primary);
+}
+
+.customRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.colorInput {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  background: none;
+  outline: none;
+}
+
+.customLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ── Width section ───────────────────────────────────── */
+.widthSection {
+  width: 100%;
+  padding: 4px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.widthBtns {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.widthBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--border);
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+
+.widthBtn:hover {
+  border-color: var(--accent);
+  background: var(--bg-active);
+}
+
+.widthActive {
+  border-color: var(--accent) !important;
+  background: var(--bg-active) !important;
+}
+
+.widthDot {
+  border-radius: 50%;
+  background: var(--text-primary);
+  display: block;
+  transition: background var(--t-fast);
+}
